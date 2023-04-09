@@ -88,6 +88,15 @@
       change_function:
         '_test': "'(lambda: None)'"
 
+- module-name: 'email.utils'
+  anti-bloat:
+    - description: 'avoid socket module usage'
+      replacements_plain:
+        'import socket': ''
+      change_function:
+        'make_msgid': 'un-callable'
+      when: 'not use_socket'
+
 - module-name: 'encodings'
   implicit-imports:
     - depends:

@@ -4051,6 +4051,11 @@
         - 'urllib.request'
         - 'urllib.response'
 
+- module-name: 'urllib3.packages.six'
+  implicit-imports:
+    - depends:
+        - 'queue'
+
 - module-name: 'uvicorn'
   implicit-imports:
     - depends:
