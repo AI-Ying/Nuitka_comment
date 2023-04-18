@@ -96,6 +96,17 @@ def main():
     # We don't care about deprecations in any version, and these are triggered
     # by run time calculations of "range" and others, while on python2.7 they
     # are disabled by default.
+    # TODO 4/18/2023, 2:52:10 PM
+    # 详情如下：https://docs.python.org/3/library/warnings.html
+    # 忽略弃用异常，如下
+    # warnings.simplefilter("ignore", DeprecationWarning)
+    # def hello(msg):
+    #    warnings.warn(msg, category=DeprecationWarning, stacklevel=2)
+    # hello('test') 没有任何输出
+    # 如果修改为 warnings.simplefilter("error", DeprecationWarning)则会抛出异常，程序中断
+    #
+    # 如果修改为 warnings.simplefilter("default", DeprecationWarning)则会抛出警告
+    #
     import warnings
 
     warnings.simplefilter("ignore", DeprecationWarning)
